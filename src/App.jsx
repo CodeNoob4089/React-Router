@@ -38,7 +38,7 @@ function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Main data={data} />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/products" element={<Products data={data} />} />
         <Route path="/product/:id" element={<Product data={data} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
