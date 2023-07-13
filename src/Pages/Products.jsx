@@ -19,7 +19,7 @@ export default function Products() {
           }}
         >
           <Link
-            to="/products/1"
+            to="/product/1"
             style={{ textDecoration: "none", color: "#ffffff" }}
           >
             <div
@@ -35,7 +35,7 @@ export default function Products() {
             </div>
           </Link>
           <Link
-            to="/products/2"
+            to="/product/2"
             style={{ textDecoration: "none", color: "#ffffff" }}
           >
             <div
@@ -51,7 +51,7 @@ export default function Products() {
             </div>
           </Link>
           <Link
-            to="/products/3"
+            to="/product/3"
             style={{ textDecoration: "none", color: "#ffffff" }}
           >
             <div

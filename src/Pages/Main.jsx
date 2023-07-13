@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-function Main() {
+function Main({ data }) {
   const Navigate = useNavigate();
   return (
     <>
@@ -42,54 +42,25 @@ function Main() {
               gap: "24px",
             }}
           >
-            <Link
-              to="/products/1"
-              style={{ textDecoration: "none", color: "#ffffff" }}
-            >
-              <div
-                style={{
-                  width: "200px",
-                  height: "240px",
-                  backgroundColor: "#068FFF",
-                  padding: "5px",
-                }}
+            {data.map((item) => (
+              <Link
+                key={item.id}
+                to={`/product/${item.id}`}
+                style={{ textDecoration: "none", color: "#ffffff" }}
               >
-                <h2>멋진 바지</h2>
-                <p>20000원</p>
-              </div>
-            </Link>
-            <Link
-              to="/products/2"
-              style={{ textDecoration: "none", color: "#ffffff" }}
-            >
-              <div
-                style={{
-                  width: "200px",
-                  height: "240px",
-                  padding: "5px",
-                  backgroundColor: "#068FFF",
-                }}
-              >
-                <h2>멋진 셔츠</h2>
-                <p>10000원</p>
-              </div>
-            </Link>
-            <Link
-              to="/products/3"
-              style={{ textDecoration: "none", color: "#ffffff" }}
-            >
-              <div
-                style={{
-                  width: "200px",
-                  height: "240px",
-                  backgroundColor: "#068FFF",
-                  padding: "5px",
-                }}
-              >
-                <h2>멋진 신발</h2>
-                <p>30000원</p>
-              </div>
-            </Link>
+                <div
+                  style={{
+                    width: "200px",
+                    height: "240px",
+                    backgroundColor: "#068FFF",
+                    padding: "5px",
+                  }}
+                >
+                  <h2>{item.name}</h2>
+                  <p>{item.cost}원</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
         <section
