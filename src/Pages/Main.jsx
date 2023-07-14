@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-
-function Main({ data }) {
+import { useSelector } from "react-redux";
+function Main() {
+  const products = useSelector((state) => state.product);
   const Navigate = useNavigate();
   return (
     <>
@@ -42,7 +43,7 @@ function Main({ data }) {
               gap: "24px",
             }}
           >
-            {data.map((item) => (
+            {products.map((item) => (
               <Link
                 key={item.id}
                 to={`/product/${item.id}`}
