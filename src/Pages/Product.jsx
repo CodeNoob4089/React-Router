@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function Product({ data }) {
+  const [soption, setSoption] = useState("");
   const { id } = useParams();
   const product = data.find((item) => item.id === parseInt(id));
   // find를 이용해 조건에맞는 배열내 특정 객체를 찾음
@@ -40,7 +41,11 @@ export default function Product({ data }) {
                   backgroundColor: "#eee",
                   borderRadius: "10px",
                 }}
+                onChange={(e) => {
+                  setSoption(e.target.value);
+                }}
               >
+                <option value={""}>선택하세요</option>
                 {product.options.map((option) => (
                   <option
                     key={option}
@@ -52,6 +57,7 @@ export default function Product({ data }) {
                     {option}
                   </option>
                 ))}
+                <div>{soption}</div>
               </select>
             </div>
           </div>
