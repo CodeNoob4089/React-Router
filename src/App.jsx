@@ -6,6 +6,7 @@ import Product from "./Pages/Product";
 import Layout from "./common/Layout";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
+import Cart from "./Pages/Cart";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/product/:id" element={<Product />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/cart" element={<Cart />} />
         <Route
           path="*"
           element={<>요청하신 페이지는 없는 페이지입니다.</>}
